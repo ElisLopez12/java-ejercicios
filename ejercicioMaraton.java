@@ -18,20 +18,21 @@ Se necesita un programa que, a partir del ingreso de los datos y edad de cada pa
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.io.IOException;
-public class maraton{
+public class ejercicioMaraton{
   public static void main(String[]args){
     int edad, dni;
     String nombre="", categoria="",continuar;
-    Scanner teclado= new Scanner(System.in);
+    Scanner tecladoString= new Scanner(System.in);
+    Scanner tecladoInt= new Scanner(System.in);
+
     System.out.println("---Inscripciones para el Maraton Del Inmigrante---");
     do{
       System.out.println("Ingrese su nombre y apellido");
-      nombre= teclado.nextLine();
+      nombre= tecladoString.nextLine();
       System.out.println("Ingrese su DNI");
-      dni= teclado.nextInt();
+      dni= tecladoInt.nextInt();
       System.out.println("Ingrese su edad");
-      edad=teclado.nextInt();
-      teclado.nextLine();
+      edad=tecladoInt.nextInt();
       if(edad<6){
         System.out.println("la edad minima es de 6 años");
         }
@@ -61,13 +62,7 @@ public class maraton{
          } catch (IOException e) {
           e.printStackTrace();
          }
-         // Limpiar la consola
-    try {
-    // Para sistemas operativos basados en Unix (Linux, macOS)
-    new ProcessBuilder("bash", "-c", "clear").inheritIO().start().waitFor();
-} catch (InterruptedException | IOException e) {
-    e.printStackTrace();
-}
+
 
     }while(dni!=0 && !nombre.equalsIgnoreCase("fin"));
   }
