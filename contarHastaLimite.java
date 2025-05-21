@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class main{
+public class contarHastaLimite{
  public static void main(String[]args){
    int limite,inicio=1;
    Scanner teclado=new Scanner(System.in);
